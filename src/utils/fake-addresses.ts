@@ -1,7 +1,4 @@
-import {
-  FormattedAddress,
-  FormattedAddressProps,
-} from '../interfaces/GeoSanitizer';
+import { FormattedAddress } from '../interfaces/geo-sanitizer';
 
 export const fakeAddresses: FormattedAddress[] = [
   {

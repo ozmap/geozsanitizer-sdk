@@ -1,31 +1,36 @@
 import {
   FormattedAddressProps,
   GetGeographicAddressParams,
-} from './interfaces/GeoSanitizer';
+} from './interfaces/geo-sanitizer';
+import BaseAddressProvider from './providers/base-provider';
+import FakeAddressProvider from './providers/fake-address.provider';
 
 export default class GeOZsanitizerSdk {
-  public static async getGeographyAddress(
+  protected provider: BaseAddressProvider;
+  constructor() {
+    // This is a mock implementation
+    this.provider = new FakeAddressProvider();
+  }
+
+  public async getGeographyAddress(
     address: GetGeographicAddressParams,
-  ): Promise<FormattedAddressProps> {
+  ): Promise<FormattedAddressProps | undefined> {
     // This is a mock implementation
 
-    return {} as FormattedAddressProps;
+    return this.provider.getGeographyAddress(address);
   }
 
-  public static async getGeographyAddressById(
+  public async getGeographyAddressById(
     id: string,
-  ): Promise<FormattedAddressProps> {
+  ): Promise<FormattedAddressProps | undefined> {
     // This is a mock implementation
 
-    return {} as FormattedAddressProps;
+    return this.provider.getGeographyAddressById(id);
   }
 
-  public static async getGeographyAddressByCoordinates(
+  public async getGeographyAddressByCoordinates(
     params: GetGeographicAddressParams,
-  ): Promise<FormattedAddressProps> {
-    const { latitude, longitude, googleApiKey } = params;
-    // This is a mock implementation
-
-    return {} as FormattedAddressProps;
+  ): Promise<FormattedAddressProps | undefined> {
+    return this.provider.getGeographyAddressByCoordinates(params);
   }
 }
