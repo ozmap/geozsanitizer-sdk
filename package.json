@@ -1,14 +1,26 @@
 {
   "name": "@ozmap/geozsanitizer-sdk",
+  "description": "The GeOZsanitizer SDK is a powerful and easy-to-use software development kit designed to simplify interactions with the GeOZsanitizer.",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "scripts": {
     "build": "tsup src/main.ts --dts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh@github.com:ozmap/geozsanitizer-sdk.git"
+  },
+  "keywords": [
+    "geozsanitizer",
+    "sdk",
+    "geozsanitizer-sdk"
+  ],
+  "author": "dev-ozmap@ozmap.com.br <Dev Ozmap>",
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "eslint": "^9.20.1",
